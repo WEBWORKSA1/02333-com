@@ -14,15 +14,17 @@ A static website covering Chinese number slang, lucky-number tools and internet 
 5. **Custom domain:** add a `CNAME` file containing `02333.com`. At your registrar, create A records for `@` → 185.199.108.153, 185.199.109.153, 185.199.110.153, 185.199.111.153 and a CNAME record for `www` → `webworksa1.github.io`. Then go to Settings → Pages and turn on *Enforce HTTPS*.
 
 ## How publishing works
-Page bodies live in `src/pages/*.html`. The shared header, top banner and footer are in `build.py`. On every push to `main`, the GitHub Actions workflow (`.github/workflows/build-deploy.yml`) runs `tools/gen_images.py` and `build.py`, commits the finished pages to `main`, and publishes the site to the `gh-pages` branch, which GitHub Pages serves.
+The site is built by **GitHub Pages' built-in Jekyll**, so no Actions workflow or server is needed (free plan):
+- `_layouts/default.html` holds the shared `<head>`, the top interest banner, the header, the footer and the script tags.
+- Each root page (for example `index.html`) is a short stub with front matter (`title`, `desc`, `scripts`) that pulls in its body from `src/pages/<page>.html`.
+- `sitemap.xml` is generated automatically.
 
-To build locally:
-
-```
-python3 build.py
-```
+To add a page, create `src/pages/new.html` (body only) and a root `new.html` stub with the same front matter pattern.
+`build.py` is an optional offline builder that writes the same HTML to `_preview/` (`python3 build.py`), so you can preview without Jekyll. `_preview/` is git-ignored.
 
 Content lives in `assets/js/data.js` (slang entries, quiz, videos, articles).
+
+**Images:** upload `assets/img/og.png` (1200×630 social preview), or run `tools/gen_images.py` locally and commit the result.
 
 ## Docs
 - `docs/RESEARCH.md` — what 02333 means, the ideas scored, and the 27-site benchmark

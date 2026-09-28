@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """02333.com static builder: wraps src/pages/*.html in the shared layout.
-Usage: python3 build.py   (writes the finished pages to the repo root)
+Usage: python3 build.py   (writes a local preview of the finished pages to _preview/;
+the live site is built by GitHub Pages' Jekyll from _layouts/default.html)
 Each page starts with a meta comment:
 <!--meta
 title: Page title
@@ -74,6 +75,10 @@ def head(title, desc, path):
 
 def build():
     pages = sorted(glob.glob(os.path.join(ROOT, "src", "pages", "*.html")))
+    out = os.path.join(ROOT, "_preview"); os.makedirs(out, exist_ok=True)
+    for sub in ("assets",):
+        if not os.path.exists(os.path.join(out, sub)):
+            os.symlink(os.path.join(ROOT, sub), os.path.join(out, sub))
     urls = []
     for p in pages:
         name = os.path.basename(p)
@@ -91,7 +96,7 @@ def build():
         scripts.append('<script src="assets/js/main.js"></script>')
         html = (head(meta.get("title", "02333"), meta.get("desc", ""), name) + header(name) +
                 '\n<main id="main">\n' + raw.strip() + '\n</main>\n' + FOOTER + "\n" + "\n".join(scripts) + "\n</body></html>\n")
-        open(os.path.join(ROOT, name), "w", encoding="utf-8").write(html)
+        open(os.path.join(out, name), "w", encoding="utf-8").write(html)
         if name != "404.html":
             urls.append(name)
     today = datetime.date.today().isoformat()
@@ -100,7 +105,7 @@ def build():
         loc = SITE_URL + ("" if u == "index.html" else u)
         sm.append(f"  <url><loc>{loc}</loc><lastmod>{today}</lastmod></url>")
     sm.append("</urlset>")
-    open(os.path.join(ROOT, "sitemap.xml"), "w").write("\n".join(sm) + "\n")
+    open(os.path.join(out, "sitemap.xml"), "w").write("\n".join(sm) + "\n")
     print("built", len(pages), "pages")
 
 if __name__ == "__main__":
