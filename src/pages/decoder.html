@@ -1,0 +1,52 @@
+<!--meta
+title: Chinese Number Slang Decoder — 2333, 520, 666, 1314 & More
+desc: Free Chinese number slang dictionary. Decode 2333, 520, 666, 1314, 886, 996 and 35+ codes with Chinese characters, pinyin, examples and safe-to-use ratings.
+scripts: decoder.js
+-->
+<section class="page-hero">
+  <div class="wrap">
+    <div class="crumbs"><a href="index.html">Home</a> › Decoder</div>
+    <span class="eyebrow">Number Slang Decoder</span>
+    <h1>What does that Chinese number mean?</h1>
+    <p class="lead">Type any number. We'll show the Chinese, pinyin, meaning, a real example and whether it's safe to use at work.</p>
+    <form class="search" id="dec-form" role="search" style="margin-top:18px">
+      <label class="sr" for="dq">Search numbers or meanings</label>
+      <input id="dq" name="q" placeholder="Number or word… e.g. 520, love, bye" autocomplete="off">
+      <button class="btn btn-red" type="submit">Decode</button>
+    </form>
+    <div class="filters" id="cats" role="group" aria-label="Filter by category"></div>
+    <div class="btns"><button class="btn btn-ghost" id="rand">🎲 Random code</button><label class="check" style="align-items:center"><input type="checkbox" id="hide-crude"> Hide crude codes</label></div>
+  </div>
+</section>
+<div class="ad" data-slot="top"></div>
+<section style="padding-top:20px">
+  <div class="wrap">
+    <p class="muted small" id="count" aria-live="polite"></p>
+    <div id="fallback"></div>
+    <div class="grid g3" id="results"></div>
+  </div>
+</section>
+<div class="ad" data-slot="inContent"></div>
+<section class="alt">
+  <div class="wrap grid g2">
+    <div>
+      <span class="eyebrow">Know one we're missing?</span>
+      <h2>Submit a number code</h2>
+      <p class="muted">Spotted a new code on Weibo, Douyin or Bilibili? Send it in. Accepted entries credit you by name, and the top contributor each month wins a prize.</p>
+      <p><a href="contests.html">See this month's prizes →</a></p>
+    </div>
+    <div class="card">
+      <form class="js-form" data-subject="New slang submission" data-ok="Thanks! Our editors will review your code.">
+        <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <input type="hidden" name="form_type" value="Slang submission">
+        <div class="row2"><div class="fld"><label for="s-n">Number</label><input id="s-n" name="number" required inputmode="numeric"></div>
+        <div class="fld"><label for="s-zh">Chinese (if known)</label><input id="s-zh" name="chinese" lang="zh"></div></div>
+        <div class="fld"><label for="s-m">Meaning & where you saw it</label><textarea id="s-m" name="meaning" required></textarea></div>
+        <div class="row2"><div class="fld"><label for="s-name">Your name (for credit)</label><input id="s-name" name="name"></div>
+        <div class="fld"><label for="s-e">Email</label><input id="s-e" name="email" type="email" required></div></div>
+        <button class="btn btn-red btn-block" type="submit">Submit code</button>
+        <div class="form-msg" role="status"></div>
+      </form>
+    </div>
+  </div>
+</section>

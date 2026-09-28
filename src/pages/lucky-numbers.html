@@ -1,0 +1,61 @@
+<!--meta
+title: Chinese Lucky Number Analyzer — Score Your Phone Number, Plate, Price or Date
+desc: Free Chinese lucky number checker. Score any phone number, license plate, address, price or launch date using Chinese number folklore: 8, 6, 9 lucky, 4 unlucky.
+scripts: lucky.js
+-->
+<section class="page-hero">
+  <div class="wrap">
+    <div class="crumbs"><a href="index.html">Home</a> › Lucky Number Analyzer</div>
+    <span class="eyebrow">Lucky Number Analyzer</span>
+    <h1>How lucky is your number?</h1>
+    <p class="lead">Score a phone number, license plate, address, price or date the way Chinese buyers, landlords and customers see it.</p>
+  </div>
+</section>
+<section style="padding-top:12px">
+  <div class="wrap grid g2" style="align-items:start">
+    <div class="card">
+      <form id="lk-form">
+        <div class="fld"><label for="lk-type">What are you checking?</label>
+          <select id="lk-type"><option value="phone">Phone number</option><option value="plate">License plate</option><option value="address">House / unit number</option><option value="price">Product price</option><option value="date">Launch / wedding date</option><option value="other">Anything else</option></select></div>
+        <div class="fld"><label for="lk-n">Enter the number</label><input id="lk-n" inputmode="numeric" placeholder="e.g. 168 8888 or 2026-08-08" required></div>
+        <button class="btn btn-red btn-block" type="submit">Analyze my number</button>
+      </form>
+      <p class="small muted" style="margin-top:12px">Cultural entertainment based on popular homophones, not a prediction or advice.</p>
+    </div>
+    <div class="card" id="lk-out" aria-live="polite">
+      <span class="eyebrow">Your result</span>
+      <p class="muted">Enter a number to see its score, digit breakdown, lucky and unlucky combos, and better alternatives.</p>
+    </div>
+  </div>
+</section>
+<div class="ad" data-slot="inContent"></div>
+<section class="alt">
+  <div class="wrap">
+    <div class="sec-head"><span class="eyebrow">Cheat sheet</span><h2>Chinese digit meanings at a glance</h2></div>
+    <div class="grid g4" id="digit-table"></div>
+  </div>
+</section>
+<section>
+  <div class="wrap leadbox">
+    <div>
+      <span class="eyebrow">For brands & property</span>
+      <h2>Get a professional “number audit”</h2>
+      <p class="lead">Launching a product, pricing for Chinese shoppers, choosing a store address or a company phone line? A specialist will review names, prices, dates and numbers before you commit.</p>
+      <ul class="ticks"><li>Price-point & bundle check for Chinese-speaking markets</li><li>Brand / product name localization with a meaning and sound review</li><li>Auspicious launch date shortlist</li></ul>
+    </div>
+    <div class="card">
+      <h3>Email me the full report + audit quote</h3>
+      <form class="js-form" data-subject="Lead: Number audit">
+        <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <input type="hidden" name="form_type" value="Lead — number audit">
+        <input type="hidden" name="analyzed_number" id="lk-hidden">
+        <div class="row2"><div class="fld"><label for="a-n">Name</label><input id="a-n" name="name" required></div>
+        <div class="fld"><label for="a-e">Email</label><input id="a-e" type="email" name="email" required></div></div>
+        <div class="fld"><label for="a-c">Company (optional)</label><input id="a-c" name="company"></div>
+        <label class="check"><input type="checkbox" name="consent" value="yes" required> Send me my report and a no-obligation quote.</label>
+        <button class="btn btn-red btn-block" type="submit" style="margin-top:12px">Send my report</button>
+        <div class="form-msg" role="status"></div>
+      </form>
+    </div>
+  </div>
+</section>

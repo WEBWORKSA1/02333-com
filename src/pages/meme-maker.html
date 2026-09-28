@@ -1,0 +1,28 @@
+<!--meta
+title: Chinese Number Meme Maker — Create 2333, 520 & 666 Meme Cards
+desc: Make shareable Chinese number-slang meme cards in seconds. Pick a code like 2333, 520 or 666, add your caption, choose a style and download a PNG.
+scripts: meme.js
+-->
+<section class="page-hero">
+  <div class="wrap">
+    <div class="crumbs"><a href="index.html">Home</a> › Meme Maker</div>
+    <span class="eyebrow">Meme Maker</span>
+    <h1>Turn a number into a meme</h1>
+    <p class="lead">Pick a code, write your caption, download and share. Enter your best one in this month's <a href="contests.html">meme contest</a>.</p>
+  </div>
+</section>
+<section style="padding-top:10px">
+  <div class="wrap grid g2" style="align-items:start">
+    <div class="card">
+      <div class="fld"><label for="m-code">Number code</label><select id="m-code"></select></div>
+      <div class="fld"><label for="m-top">Top caption</label><input id="m-top" value="When the boss says the deadline moved up" maxlength="80"></div>
+      <div class="fld"><label for="m-bot">Bottom caption</label><input id="m-bot" value="Me: 2333… I mean 555" maxlength="80"></div>
+      <div class="fld"><label>Style</label><div class="chips" id="m-style">
+        <button class="chip on" data-s="red">Lucky Red</button><button class="chip" data-s="gold">Gold Rush</button><button class="chip" data-s="ink">Ink Night</button><button class="chip" data-s="jade">Jade</button></div></div>
+      <div class="fld"><label for="m-img">Background photo (optional, stays on your device)</label><input id="m-img" type="file" accept="image/*"></div>
+      <div class="btns"><button class="btn btn-red" id="m-dl">⬇ Download PNG</button><button class="btn btn-ghost" data-share="Made a Chinese number meme on 02333 — make yours">Share tool</button></div>
+    </div>
+    <div><canvas id="m-canvas" width="1080" height="1080" aria-label="Meme preview"></canvas></div>
+  </div>
+</section>
+<div class="ad" data-slot="inContent"></div>
