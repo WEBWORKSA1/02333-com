@@ -1,0 +1,7 @@
+---
+layout: null
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+{% for p in site.html_pages %}{% unless p.name == "404.html" or p.path contains "src/" %}  <url><loc>https://02333.com/{% if p.name != "index.html" %}{{ p.name }}{% endif %}</loc><lastmod>{{ site.time | date: "%Y-%m-%d" }}</lastmod></url>
+{% endunless %}{% endfor %}</urlset>

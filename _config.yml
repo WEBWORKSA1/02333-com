@@ -1,0 +1,4 @@
+title: "02333"
+description: "Decode China, one number at a time."
+url: "https://02333.com"
+exclude: [build.py, tools, docs, README.md, _preview]
